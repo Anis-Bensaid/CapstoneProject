@@ -132,3 +132,4 @@ dmypy.json
 *.p
 signals-data-wrangling/
 *.pkl
+*.pickle
