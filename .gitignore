@@ -131,3 +131,16 @@ dmypy.json
 *.7z
 *.p
 signals-data-wrangling/
+*.pickle
+*.html
+*.pkl
+*.npy
+*.state
+*.id2word
+topic_modelling/cv_best_0.1_0.1_3
+topic_modelling/cv_best_symmetric_0.1_9
+topic_modelling/full_asymmetric_symmetric_8
+topic_modelling/last_run/cv_best_0.1_0.1_3
+topic_modelling/last_run/cv_best_symmetric_0.1_9
+topic_modelling/old/full_asymmetric_symmetric_8
+topic_modelling/old/lda_8
