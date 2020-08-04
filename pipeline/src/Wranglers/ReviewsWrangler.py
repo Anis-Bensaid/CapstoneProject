@@ -1,10 +1,10 @@
 from src.Utilis.NLPreprocessor import *
 from src.Wranglers.TopicModeller import *
 from src.Wranglers.ProductCatalogueWrangler import *
+
 import pandas as pd
 import numpy as np
 import ntpath
-
 import tqdm
 
 prod_paths_file_types = [('../data/Cosmetics_Product_20200116_w_SAP.csv', 'Cosmetics'),
