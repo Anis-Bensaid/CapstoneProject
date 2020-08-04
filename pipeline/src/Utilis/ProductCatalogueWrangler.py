@@ -22,6 +22,8 @@ class ProductCatalogueWrangler:
                      'category',
                      # 'sub_category_id',
                      'sub_category']
+        self.read_and_concatenate()
+        self.wrangle()
 
     def read_and_concatenate(self):
         for path_file_type in self.paths_file_types:
@@ -36,6 +38,8 @@ class ProductCatalogueWrangler:
                 print('Concatenating', path)
                 self.products = pd.concat([self.products, temp], ignore_index=True)
 
-    def get_product_catalogues(self):
-        self.read_and_concatenate()
+    def wrangle(self):
+        self.products.dropna(inplace=True)
+
+    def get_product_catalogue(self):
         return self.products
