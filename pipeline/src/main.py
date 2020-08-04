@@ -1,5 +1,4 @@
-from src.Utilis.ReviewsWrangler import *
-import os
+from src.Wranglers.ReviewsWrangler import *
 
 if __name__ == '__main__':
     rev_paths_file_types = [('../data/cosmetics_reviews_20200101-20200131_processed.csv', 'Cosmetics')]

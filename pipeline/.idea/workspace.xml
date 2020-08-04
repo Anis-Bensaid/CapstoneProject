@@ -20,12 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a0e5d19-0fd1-464a-8f32-0ebd6d4a0891" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Utilis/NLPreprocessor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utilis/ReviewsWrangler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Predictors/TopicModeller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Predictors/TopicModeller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilis/InputHandlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilis/InputHandlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilis/ProductCatalogueWrangler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilis/ProductCatalogueWrangler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputBuilders/ExcelBuilder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputBuilders/ExcelBuilder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predictors/DemandPredictor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predictors/SentimentPredictor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predictors/TopicModeller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wranglers/TopicModeller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predictors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wranglers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilis/ProductCatalogueWrangler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wranglers/ProductCatalogueWrangler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilis/ReviewsWrangler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wranglers/ReviewsWrangler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +58,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\src\Wranglers" />
       <recent name="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\src" />
       <recent name="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline" />
       <recent name="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\src\OutputBuilders" />
       <recent name="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\src\Utilis" />
-      <recent name="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\KPIPipeline\Predicters" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\data" />
@@ -79,7 +81,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Utilis/ReviewsWrangler.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\src\Wranglers\ReviewsWrangler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />

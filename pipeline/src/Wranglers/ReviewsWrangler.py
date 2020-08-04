@@ -1,15 +1,14 @@
-from src.Utilis.ProductCatalogueWrangler import *
 from src.Utilis.NLPreprocessor import *
-from src.Predictors.TopicModeller import *
-from src.Utilis.ProductCatalogueWrangler import *
+from src.Wranglers.TopicModeller import *
+from src.Wranglers.ProductCatalogueWrangler import *
 import pandas as pd
 import numpy as np
 import ntpath
 
 import tqdm
 
-
-prod_paths_file_types = [('../data/Cosmetics_Product_20200116_w_SAP.csv', 'Cosmetics'), ('../data/products_cosmetics_w_SAP.csv', 'Cosmetics')]
+prod_paths_file_types = [('../data/Cosmetics_Product_20200116_w_SAP.csv', 'Cosmetics'),
+                         ('../data/products_cosmetics_w_SAP.csv', 'Cosmetics')]
 rev_paths_file_types = [('../data/cosmetics_reviews_20200101-20200131_processed.csv', 'Cosmetics')]
 
 # os.chdir('src')
@@ -37,6 +36,7 @@ class ReviewsWrangler:
         self.add_product_catalogue()
         self.get_tokens()
         self.add_topics()
+        self.aggregate_by_subcategories()
 
     def read_and_concatenate(self):
         for path_file_type in self.paths_file_types:
@@ -54,13 +54,13 @@ class ReviewsWrangler:
     def wrangle(self):
         self.reviews = self.reviews[self.reviews['geography'] == 'USA']
 
-        # Creating date columns in the right dtype and dropping the day of the month: 2019-02-24 => 2019-02-01
-        self.reviews.loc[:, 'month'] = pd.to_datetime(self.reviews['review_date'], errors='coerce')
-        if self.reviews['month'].isna().sum() > 0:
+        # Creating date columns in the right dtype and dropping the day of the date: 2019-02-24 => 2019-02-01
+        self.reviews.loc[:, 'date'] = pd.to_datetime(self.reviews['review_date'], errors='coerce')
+        if self.reviews['date'].isna().sum() > 0:
             print('{} rows have been dropped because the date format is wrong.'.format(
-                self.reviews['month'].isna().sum()))
-            self.reviews = self.reviews.dropna(subset='month')
-        self.reviews['month'] = self.reviews['month'].dt.to_period('m')
+                self.reviews['date'].isna().sum()))
+            self.reviews = self.reviews.dropna(subset='date')
+        self.reviews['date'] = self.reviews['date'].dt.to_period('m')
 
         # Checking for missing data (NA => -1)
         if self.reviews['rating'].isna().sum() > 0:
@@ -94,7 +94,7 @@ class ReviewsWrangler:
         self.reviews = self.reviews.groupby(['type',
                                              'channel',
                                              'source_product_identifier',
-                                             'month',
+                                             'date',
                                              'onlinepost_id']).agg({'description': lambda x: '. '.join(list(x)),
                                                                     'nb_statements': 'count',
                                                                     'rating': 'first',
@@ -113,6 +113,7 @@ class ReviewsWrangler:
         self.reviews[['sentiment_negative', 'sentiment_neutral', 'sentiment_positive']] = self.reviews[
             ['sentiment_negative', 'sentiment_neutral', 'sentiment_positive']].div(self.reviews['nb_statements'],
                                                                                    axis=0)
+
     def add_product_catalogue(self):
         self.reviews = self.reviews.merge(product_wrangler.get_product_catalogue())
 
@@ -126,4 +127,32 @@ class ReviewsWrangler:
         self.reviews = topic_modeller.add_topics(reviews=self.reviews)
 
     def aggregate_by_subcategories(self):
-        
+        # Aggregating RR data by channel + source_product_identifier
+
+        # Creating a column to count the number of self.reviews once aggreagtion happens
+        self.reviews['nb_reviews'] = self.reviews['rating']
+        self.reviews['avg_nb_statements'] = self.reviews['nb_statements']
+
+        self.reviews = self.reviews.groupby(['type',
+                                             'product',
+                                             'brand_id',
+                                             'elc_brand',
+                                             'item_description',
+                                             'itemid_4',
+                                             'major_category',
+                                             'application',
+                                             'category',
+                                             'sub_category',
+                                             'date']).agg({'avg_nb_statements': 'mean',
+                                                           'nb_reviews': 'count',
+                                                           'rating': 'mean',
+                                                           'rating_1': 'sum',
+                                                           'rating_2': 'sum',
+                                                           'rating_3': 'sum',
+                                                           'rating_4': 'sum',
+                                                           'rating_5': 'sum',
+                                                           'sentiment': 'mean',
+                                                           'sentiment_negative': 'sum',
+                                                           'sentiment_neutral': 'sum',
+                                                           'sentiment_positive': 'sum',
+                                                           }).reset_index()
