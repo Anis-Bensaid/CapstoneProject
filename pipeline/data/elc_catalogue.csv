@@ -1,0 +1,338 @@
+Major_Category_ID,Major_Category,Application_ID,Application,Category_ID,Category,SubCategory_ID,SubCategory
+510,MAKEUP,10,LIPS,10,Lip Liner,16,All Lip Liner
+510,MAKEUP,10,LIPS,11,Lipsticks,17,All Lipsticks
+510,MAKEUP,10,LIPS,11,Lipsticks,M0,Palette
+510,MAKEUP,10,LIPS,11,Lipsticks,M1,Pan Only
+510,MAKEUP,10,LIPS,11,Lipsticks,MS,All Other Lipsticks
+510,MAKEUP,10,LIPS,12,Lip Gloss,18,All Lip Gloss
+510,MAKEUP,10,LIPS,12,Lip Gloss,M0,Palette
+510,MAKEUP,10,LIPS,12,Lip Gloss,M1,Pan Only
+510,MAKEUP,10,LIPS,12,Lip Gloss,MT,All Other Lip Gloss
+510,MAKEUP,10,LIPS,13,Lip Primer,M2,All Lip Primer
+510,MAKEUP,10,LIPS,1A,Lip Stains / Tints / Balms (Tinted),MR,All Lip Stains/Tints/Balms(Tinted)
+510,MAKEUP,10,LIPS,2J,Liquid Lip,MQ,All Liquid Lip
+510,MAKEUP,10,LIPS,14,All Other Lips,19,All Other Lips
+510,MAKEUP,10,LIPS,14,All Other Lips,M0,Palette
+510,MAKEUP,10,LIPS,14,All Other Lips,MU,All Other All Other Lips
+510,MAKEUP,10,LIPS,96,Cross Category Sets,6A,All Cross Category Sets
+510,MAKEUP,15,EYES,15,Mascara,M3,Lengthening
+510,MAKEUP,15,EYES,15,Mascara,M4,Volumizing
+510,MAKEUP,15,EYES,15,Mascara,M5,Defining
+510,MAKEUP,15,EYES,15,Mascara,M6,Curling
+510,MAKEUP,15,EYES,15,Mascara,M7,Multi-purpose
+510,MAKEUP,15,EYES,15,Mascara,22,All Other Mascara
+510,MAKEUP,15,EYES,19,Eyelash Primer,M8,All Eyelash Primer
+510,MAKEUP,15,EYES,16,Eyebrow Liners/Shapers,23,All Eyebrow Liners/Shapers
+510,MAKEUP,15,EYES,17,Eye Liners,A8,Liquid Eye Liners
+510,MAKEUP,15,EYES,17,Eye Liners,A9,Pencil Eye Liners
+510,MAKEUP,15,EYES,17,Eye Liners,M9,Gel Eye Liners
+510,MAKEUP,15,EYES,17,Eye Liners,MA,Dual Ended Eyeliners
+510,MAKEUP,15,EYES,17,Eye Liners,28,All Other Eye Liners
+510,MAKEUP,15,EYES,18,Eyeshadow,10,Single
+510,MAKEUP,15,EYES,18,Eyeshadow,M0,Palette
+510,MAKEUP,15,EYES,18,Eyeshadow,M1,Pan Only
+510,MAKEUP,15,EYES,18,Eyeshadow,15,All Other Eyeshadows
+510,MAKEUP,15,EYES,2A,Eye Makeup Primer,MB,All Eye Makeup Primer
+510,MAKEUP,15,EYES,20,All Other Eye Makeup,29,All Other Eye Makeup
+510,MAKEUP,15,EYES,20,All Other Eye Makeup,M0,Palette
+510,MAKEUP,15,EYES,96,Cross Category Sets,6A,All Cross Category Sets
+510,MAKEUP,20,NAILS,21,Nail Top / Base Coats,32,Nail Top / Base Coats
+510,MAKEUP,20,NAILS,22,Nail Enamel,37,All Nail Enamel
+510,MAKEUP,20,NAILS,23,Nail Care,38,All Nail Care
+510,MAKEUP,20,NAILS,xx,All Other Nails,MC,All Other Nails
+510,MAKEUP,20,NAILS,96,Cross Category Sets,6A,All Cross Category Sets
+510,MAKEUP,25,FACE,25,Concealers and Correctors,39,All Concealers
+510,MAKEUP,25,FACE,25,Concealers and Correctors,MD,Correctors
+510,MAKEUP,25,FACE,25,Concealers and Correctors,M0,Palette
+510,MAKEUP,25,FACE,25,Concealers and Correctors,M1,Pan Only
+510,MAKEUP,25,FACE,25,Concealers and Correctors,ME,All Other Concealers &Correctors
+510,MAKEUP,25,FACE,26,Face Powder,44,Loose Face Powder
+510,MAKEUP,25,FACE,26,Face Powder,A2,Pressed Face Powder
+510,MAKEUP,25,FACE,26,Face Powder,MF,All Other Face Powder
+510,MAKEUP,25,FACE,28,Foundation,25,Foundation Stick
+510,MAKEUP,25,FACE,28,Foundation,26,Liquid Foundation
+510,MAKEUP,25,FACE,28,Foundation,27,Cream Foundation Compact
+510,MAKEUP,25,FACE,28,Foundation,MG,Liquid Foundation Compact
+510,MAKEUP,25,FACE,28,Foundation,B1,Cream Foundation
+510,MAKEUP,25,FACE,28,Foundation,B2,Loose Powder Foundation
+510,MAKEUP,25,FACE,28,Foundation,B3,Pressed Powder Foundation
+510,MAKEUP,25,FACE,28,Foundation,MH,Cushion Foundation
+510,MAKEUP,25,FACE,28,Foundation,30,All Other Foundation
+510,MAKEUP,25,FACE,3L,Tinted Moisturizer,3A,All Tinted Moisturizers
+510,MAKEUP,25,FACE,29,Makeup Primers/Finisher/Fixers/Setters,3B,Finishers/Fixers/Setters
+510,MAKEUP,25,FACE,29,Makeup Primers/Finisher/Fixers/Setters,3C,Makeup Primers
+510,MAKEUP,25,FACE,29,Makeup Primers/Finisher/Fixers/Setters,31,AllOther Primers/Finishers/Fixers/Setter
+510,MAKEUP,25,FACE,30,All Other Face Makeup,33,All Other Face Makeup
+510,MAKEUP,25,FACE,96,Cross Category Sets,6A,All Cross Category Sets
+510,MAKEUP,40,FACE COLOR,2B,Bronzer,20,All Bronzer
+510,MAKEUP,40,FACE COLOR,2C,Highlighter,21,Highlighter
+510,MAKEUP,40,FACE COLOR,2D,Blush,A1,Blush
+510,MAKEUP,40,FACE COLOR,2D,Blush,M0,Palette
+510,MAKEUP,40,FACE COLOR,2D,Blush,M1,Pan Only
+510,MAKEUP,40,FACE COLOR,2D,Blush,MV,All Other Blush
+510,MAKEUP,40,FACE COLOR,2E,Contouring/Sculpting,M0,Palette
+510,MAKEUP,40,FACE COLOR,2E,Contouring/Sculpting,M1,Pan Only
+510,MAKEUP,40,FACE COLOR,2E,Contouring/Sculpting,MJ,Contouring/Sculpting
+510,MAKEUP,40,FACE COLOR,2E,Contouring/Sculpting,MW,All Other Contouring/Sculpting
+510,MAKEUP,40,FACE COLOR,2F,All Other Face Color,24,All Other Face Color
+510,MAKEUP,40,FACE COLOR,2F,All Other Face Color,M0,Palette
+510,MAKEUP,40,FACE COLOR,96,Cross Category Sets,6A,All Cross Category Sets
+510,MAKEUP,90,ALL OTHER M/U APPL,85,Services,49,All Services
+510,MAKEUP,90,ALL OTHER M/U APPL,90,Accessories,34,Tools
+510,MAKEUP,90,ALL OTHER M/U APPL,90,Accessories,35,Bags / Totes
+510,MAKEUP,90,ALL OTHER M/U APPL,90,Accessories,36,Lash / Adhesives
+510,MAKEUP,90,ALL OTHER M/U APPL,90,Accessories,A3,Empty Compacts
+510,MAKEUP,90,ALL OTHER M/U APPL,90,Accessories,40,All Other Accessories
+510,MAKEUP,90,ALL OTHER M/U APPL,91,Applicators,41,Lip Applicators
+510,MAKEUP,90,ALL OTHER M/U APPL,91,Applicators,42,Eye Applicators
+510,MAKEUP,90,ALL OTHER M/U APPL,91,Applicators,43,Face Applicators
+510,MAKEUP,90,ALL OTHER M/U APPL,91,Applicators,45,All Other Applicators
+510,MAKEUP,90,ALL OTHER M/U APPL,2G,Brushes,MK,Lip Brushes
+510,MAKEUP,90,ALL OTHER M/U APPL,2G,Brushes,ML,Eye Brushes
+510,MAKEUP,90,ALL OTHER M/U APPL,2G,Brushes,MM,Face Brushes
+510,MAKEUP,90,ALL OTHER M/U APPL,2G,Brushes,MN,All Other Brushes
+510,MAKEUP,90,ALL OTHER M/U APPL,94,Palettes,A4,All Palettes
+510,MAKEUP,90,ALL OTHER M/U APPL,2H,ALL OTHER M/U APPL,MP,All All Other M/U Appl
+510,MAKEUP,90,ALL OTHER M/U APPL,96,Cross Category Sets,6A,All Cross Category Sets
+510,MAKEUP,94,Cross Application Sets,95,Cross Application Sets,64,All Cross Application  Sets
+510,MAKEUP,95,Cross Major Category Sets,92,Cross Major Category Sets,6B,All Cross Major Category Sets
+510,MAKEUP,96,COLLATERAL,A5,Collateral,C1,Collateral
+520,SKIN CARE,25,Face,31,Moisturizers,80,All Moisturizers
+520,SKIN CARE,25,Face,31,Moisturizers,3D,Emulsions/Milky Lotions
+520,SKIN CARE,25,Face,3A,Face Oil,S1,All Face Oils
+520,SKIN CARE,25,Face,32,Supplements,98,All Supplements
+520,SKIN CARE,25,Face,33,Shave,S2,Pre-Shave
+520,SKIN CARE,25,Face,33,Shave,S3,Shave
+520,SKIN CARE,25,Face,33,Shave,S4,Post-Shave
+520,SKIN CARE,25,Face,33,Shave,ZX,All Other Shave
+520,SKIN CARE,25,Face,3B,Facial Hair Grooming,S5,Beard/Moustache
+520,SKIN CARE,25,Face,3B,Facial Hair Grooming,S6,All Other Facial Hair Grooming
+520,SKIN CARE,25,Face,34,Cleansers (Incl Soap),ZI,All Makeup Remover
+520,SKIN CARE,25,Face,34,Cleansers (Incl Soap),Z5,All Other Cleansers (Incl Bar Soap)
+520,SKIN CARE,25,Face,35,Exfoliators,Z6,All Exfoliators
+520,SKIN CARE,25,Face,36,Toners / Clarifyers,ZB,All Toners / Clarifyers
+520,SKIN CARE,25,Face,3C,Watery /Treatment/Essence Lotion,S7,All Watery /Treatment/Essence Lotions
+520,SKIN CARE,25,Face,37,Acne /Blackhead Target Treatment,ZF,All Other Acne Target Treatment
+520,SKIN CARE,25,Face,37,Acne /Blackhead Target Treatment,S8,All Blackhead Target Treatment
+520,SKIN CARE,25,Face,37,Acne /Blackhead Target Treatment,S9,All Acne/Blackhead Target Treatment
+520,SKIN CARE,25,Face,38,Oil / Shine Control,ZH,All Oil / Shine Control
+520,SKIN CARE,25,Face,40,Face Masks,SA,Wash-off
+520,SKIN CARE,25,Face,40,Face Masks,SB,Leave-on
+520,SKIN CARE,25,Face,40,Face Masks,SC,Eye Masks
+520,SKIN CARE,25,Face,40,Face Masks,ZJ,All Other Masks
+520,SKIN CARE,25,Face,41,Serums & Essences,SD,All Skincare Boosters
+520,SKIN CARE,25,Face,41,Serums & Essences,ZK,All Other Serums & Essences
+520,SKIN CARE,25,Face,42,Lip Treatment,SE,Lip Exfoliators/Scrubs
+520,SKIN CARE,25,Face,42,Lip Treatment,ZM,All Other Lip Treatment
+520,SKIN CARE,25,Face,43,Eye Treatment,SF,Eye Serums & Essences
+520,SKIN CARE,25,Face,43,Eye Treatment,ZN,All Other Eye Treatment
+520,SKIN CARE,25,Face,44,Whitening Target Treatment,A5,All Whitening Target Treatment
+520,SKIN CARE,25,Face,3D,Sun - Face,46,After Sun
+520,SKIN CARE,25,Face,3D,Sun - Face,47,In Sun
+520,SKIN CARE,25,Face,3D,Sun - Face,48,Self Tan
+520,SKIN CARE,25,Face,3D,Sun - Face,SG,All Other Sun- FACE
+520,SKIN CARE,25,Face,3E,Hybrids,SH,Alphabet Creams
+520,SKIN CARE,25,Face,3E,Hybrids,SJ,All Other Hybrids
+520,SKIN CARE,25,Face,3F,Facial Devices,SK,Electronic Devices
+520,SKIN CARE,25,Face,3F,Facial Devices,SL,Manual Tools
+520,SKIN CARE,25,Face,3F,Facial Devices,SM,Refills
+520,SKIN CARE,25,Face,3F,Facial Devices,SN,All Other Facial Devices
+520,SKIN CARE,25,Face,96,Cross Category Sets,6A,All Cross Category Sets
+520,SKIN CARE,25,Face,45,All Other Face,ZO,All Other Face
+520,SKIN CARE,30,Body,31,Moisturizers,80,All Moisturizers
+520,SKIN CARE,30,Body,3G,Body Oil,SP,All Body Oils
+520,SKIN CARE,30,Body,32,Supplements,98,All Supplements
+520,SKIN CARE,30,Body,34,Cleansers (Incl Soap),Z5,All Cleansers (Incl Soap)
+520,SKIN CARE,30,Body,35,Exfoliators,Z6,All Exfoliators
+520,SKIN CARE,30,Body,46,Firming/Cellulite Products,ZP,All Firming Cellulite Products
+520,SKIN CARE,30,Body,50,Body Treatment Shave,ZQ,All Body Treatment Shave
+520,SKIN CARE,30,Body,51,Deodorants/Anti-Perspirant,ZR,All Deodorants/Anti-Perspirant
+520,SKIN CARE,30,Body,53,Sprays,ZS,All Sprays
+520,SKIN CARE,30,Body,54,Massage,ZT,All Massage
+520,SKIN CARE,30,Body,55,Bath Additives,ZU,All Bath Additives
+520,SKIN CARE,30,Body,3H,Sun - Body,46,After Sun
+520,SKIN CARE,30,Body,3H,Sun - Body,47,In Sun
+520,SKIN CARE,30,Body,3H,Sun - Body,48,Self Tan
+520,SKIN CARE,30,Body,3H,Sun - Body,SG,All Other Sun- BODY
+520,SKIN CARE,30,Body,3J,Body Devices,SQ,All Body Devices
+520,SKIN CARE,30,Body,96,Cross Category Sets,6A,All Cross Category Sets
+520,SKIN CARE,30,Body,57,All Other Body,ZV,All All Other Body
+520,SKIN CARE,45,Neck & Decollete,3M,Neck & Decollete,3E,All Neck & Decollete 
+520,SKIN CARE,91,All Other S/C Applications,58,Aromatherapy,ZW,All Aromatherapy
+520,SKIN CARE,91,All Other S/C Applications,85,Services,49,All Services
+520,SKIN CARE,91,All Other S/C Applications,96,Cross Category Sets,6A,All Cross Category Sets
+520,SKIN CARE,91,All Other S/C Applications,3K,ALL OTHER S/C APPLICATIONS,SR,ALL OTHER OTHER S/C APPLICATIONS
+520,SKIN CARE,94,Cross Application Sets,95,Cross Application Sets,64,All Cross Application  Sets
+520,SKIN CARE,95,Cross Major Category Sets,92,Cross Major Category Sets,6B,All Cross Major Category Sets
+520,SKIN CARE,96,COLLATERAL,A5,Collateral,C1,Collateral
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,50,After Shave
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,57,Fragranced Spray/Splash/Mist/Eau Fraiche
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,51,EDC / Cologne
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,52,EDP
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,53,EDT
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,54,Parfum / Perfume
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,55,Blending Fragrance  Juices
+530,FRAGRANCE,92,All Fragrance Juices,61,Juices,56,All Other Fragrance Juices
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,86,Fragranced Bath,58,Cleansers(Incl Soap)
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,86,Fragranced Bath,F2,Body Scrub / Exfoliator
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,86,Fragranced Bath,ZU,All Bath Additives
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,86,Fragranced Bath,65,All Other Fragranced Bath
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,87,Fragranced Hair,60,Fragranced Shampoo and Conditioner
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,87,Fragranced Hair,F4,All Other Fragranced Hair
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,87,Fragranced Hair,F5,Fragranced Hair Mists
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,88,Fragranced Body ,61,Body Moisturizers
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,88,Fragranced Body ,62,Body Powder
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,88,Fragranced Body ,F8,Hand Moisturizers
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,88,Fragranced Body ,59,Deodorant / Anti-Perspirant
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,88,Fragranced Body ,63,Shave /  Grooming
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,88,Fragranced Body ,66,All Other Fragranced Body
+530,FRAGRANCE,97,Fragranced Body & Hair Ancillaries,96,Cross Category Sets,6A,All Cross Category Sets
+530,FRAGRANCE,98,Fragranced Home Ancillaries,63,Fragranced Home Ancillaries,67,Candles
+530,FRAGRANCE,98,Fragranced Home Ancillaries,63,Fragranced Home Ancillaries,B4,Diffusers
+530,FRAGRANCE,98,Fragranced Home Ancillaries,63,Fragranced Home Ancillaries,B5,Linen / Textiles
+530,FRAGRANCE,98,Fragranced Home Ancillaries,63,Fragranced Home Ancillaries,B6,Room Spray
+530,FRAGRANCE,98,Fragranced Home Ancillaries,63,Fragranced Home Ancillaries,69,All Other Fragranced Home Ancillaries
+530,FRAGRANCE,9A,All Other Fragrance Applications,89,All Other Fragrance Applications,F9,All Other Fragrance Applications
+530,FRAGRANCE,9A,All Other Fragrance Applications,85,Services,49,All Services
+530,FRAGRANCE,94,Cross Application Sets,95,Cross Application Sets,64,All Cross Application  Sets
+530,FRAGRANCE,95,Cross Major Category Sets,92,Cross Major Category Sets,6B,All Cross Major Category Sets
+530,FRAGRANCE,96,Collateral,A5,Collateral,C1,All Collateral
+540,HAIRCARE,35,Hair Color,65,Hair Color,70,Demi-Permanent
+540,HAIRCARE,35,Hair Color,65,Hair Color,71,Developer
+540,HAIRCARE,35,Hair Color,65,Hair Color,72,Hair Color Tools
+540,HAIRCARE,35,Hair Color,65,Hair Color,73,Permanent
+540,HAIRCARE,35,Hair Color,65,Hair Color,74,Semi-Permanent
+540,HAIRCARE,35,Hair Color,65,Hair Color,75,Support Products
+540,HAIRCARE,35,Hair Color,65,Hair Color,76,Bleaching Products
+540,HAIRCARE,35,Hair Color,65,Hair Color,92,All Other
+540,HAIRCARE,36,Hair Styling,66,Aerosol Hair Spray,77,Light Hold
+540,HAIRCARE,36,Hair Styling,66,Aerosol Hair Spray,78,Medium / Flexible Hold
+540,HAIRCARE,36,Hair Styling,66,Aerosol Hair Spray,79,Firm Hold
+540,HAIRCARE,36,Hair Styling,66,Aerosol Hair Spray,92,All Other
+540,HAIRCARE,36,Hair Styling,A0,Non Aerosol Hair Spray,77,Light Hold
+540,HAIRCARE,36,Hair Styling,A0,Non Aerosol Hair Spray,78,Medium / Flexible Hold
+540,HAIRCARE,36,Hair Styling,A0,Non Aerosol Hair Spray,79,Firm Hold
+540,HAIRCARE,36,Hair Styling,A0,Non Aerosol Hair Spray,92,All Other
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,82,Curl / Wave Enhancing
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,83,Straightening / Smoothing
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,84,Volume
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,85,Definition
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,86,Shine
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,H1,Thickening
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,H2,Structure / Hold
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,H3,Texture Creation
+540,HAIRCARE,36,Hair Styling,67,Styling / Primer Prep,92,All Other
+540,HAIRCARE,36,Hair Styling,A1,Styling Tools,87,All Styling Tools
+540,HAIRCARE,36,Hair Styling,96,Cross Category Sets,6A,All Cross Category Sets
+540,HAIRCARE,37,Hair Care,68,Conditioner,88,Color Care
+540,HAIRCARE,37,Hair Care,68,Conditioner,89,Repair
+540,HAIRCARE,37,Hair Care,68,Conditioner,90,Scalp Care / Dandruff
+540,HAIRCARE,37,Hair Care,68,Conditioner,91,Texture
+540,HAIRCARE,37,Hair Care,68,Conditioner,H4,Anti Hair Loss / Breakage
+540,HAIRCARE,37,Hair Care,68,Conditioner,H5,Moisture- Non Oil Infused
+540,HAIRCARE,37,Hair Care,68,Conditioner,H6,Moisture- Oil Infused
+540,HAIRCARE,37,Hair Care,68,Conditioner,84,Volume
+540,HAIRCARE,37,Hair Care,68,Conditioner,82,Curl / Wave Enhancing
+540,HAIRCARE,37,Hair Care,68,Conditioner,83,Straightening / Smoothing
+540,HAIRCARE,37,Hair Care,68,Conditioner,H7,Color Enhancing
+540,HAIRCARE,37,Hair Care,68,Conditioner,HB,Dry Conditioner
+540,HAIRCARE,37,Hair Care,68,Conditioner,92,All Other
+540,HAIRCARE,37,Hair Care,69,Shampoo,88,Color Care
+540,HAIRCARE,37,Hair Care,69,Shampoo,89,Repair
+540,HAIRCARE,37,Hair Care,69,Shampoo,90,Scalp Care / Dandruff
+540,HAIRCARE,37,Hair Care,69,Shampoo,91,Texture
+540,HAIRCARE,37,Hair Care,69,Shampoo,H4,Anti Hair Loss / Breakage
+540,HAIRCARE,37,Hair Care,69,Shampoo,H5,Moisture- Non Oil Infused
+540,HAIRCARE,37,Hair Care,69,Shampoo,H6,Moisture- Oil Infused
+540,HAIRCARE,37,Hair Care,69,Shampoo,84,Volume
+540,HAIRCARE,37,Hair Care,69,Shampoo,82,Curl/ Wave Enhancing
+540,HAIRCARE,37,Hair Care,69,Shampoo,83,Straightening / Smoothing
+540,HAIRCARE,37,Hair Care,69,Shampoo,93,Clarifying
+540,HAIRCARE,37,Hair Care,69,Shampoo,H7,Color Enhancing
+540,HAIRCARE,37,Hair Care,69,Shampoo,H8,Dry Shampoo
+540,HAIRCARE,37,Hair Care,69,Shampoo,92,All Other
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,88,Color Care
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,89,Repair
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,90,Scalp Care / Dandruff
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,91,Texture
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,H4,Anti Hair Loss / Breakage
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,H5,Moisture- Non Oil Infused
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,H6,Moisture- Oil Infused
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,84,Volume
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,82,Curl / Wave Enhancing
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,83,Straightening / Smoothing
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,93,Clarifying
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,H7,Color Enhancing
+540,HAIRCARE,37,Hair Care,A2,Rinse Off Treatment,92,All Other
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,88,Color Care
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,89,Repair
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,90,Scalp Care / Dandruff
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,91,Texture
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,H4,Anti Hair Loss / Breakage
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,H5,Moisture- Non Oil Infused
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,H6,Moisture- Oil Infused
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,84,Volume
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,82,Curl / Wave Enhancing
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,83,Straightening / Smoothing
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,93,Clarifying
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,H9,Sun Care
+540,HAIRCARE,37,Hair Care,A3,Leave In Treatment,92,All Other
+540,HAIRCARE,37,Hair Care,A4,Hybrids,HA,All Hair Care Hybrids
+540,HAIRCARE,37,Hair Care,96,Cross Category Sets,6A,All Cross Category Sets
+540,HAIRCARE,93,All Other Hair Care ,71,Permanent Texture,94,Waves / Curls
+540,HAIRCARE,93,All Other Hair Care ,71,Permanent Texture,96,Straighteners
+540,HAIRCARE,93,All Other Hair Care ,71,Permanent Texture,92,All Other
+540,HAIRCARE,93,All Other Hair Care ,73,All Other Other Haircare,92,All Other
+540,HAIRCARE,93,All Other Hair Care ,85,Services,49,All Services
+540,HAIRCARE,93,All Other Hair Care ,96,Cross Category Sets,6A,All Cross Category Sets
+540,HAIRCARE,94,Cross Application Sets,95,Cross Application Sets,64,All Cross Application  Sets
+540,HAIRCARE,95,Cross Major Category Sets,92,Cross Major Category Sets,6B,All Cross Major Category Sets
+540,HAIRCARE,96,Collateral,A5,Collateral,C1,All Collateral
+590,OTHER,99,All Other Applications,75,Home,Y0,Textiles
+590,OTHER,99,All Other Applications,75,Home,Y1,Ornaments
+590,OTHER,99,All Other Applications,75,Home,Y2,Garden
+590,OTHER,99,All Other Applications,75,Home,Y3,Home Fragrances
+590,OTHER,99,All Other Applications,75,Home,Y5,All Other Home
+590,OTHER,99,All Other Applications,76,Beverage,Y6,Loose Tea
+590,OTHER,99,All Other Applications,76,Beverage,Y7,Tea Sachets
+590,OTHER,99,All Other Applications,76,Beverage,Y8,Tea Accessories
+590,OTHER,99,All Other Applications,76,Beverage,YA,All Other Beverages
+590,OTHER,99,All Other Applications,77,Pets,YB,Pet Treatment
+590,OTHER,99,All Other Applications,77,Pets,YC,Pet Accessories
+590,OTHER,99,All Other Applications,77,Pets,YE,All Other Pet
+590,OTHER,99,All Other Applications,78,Herbal Therapy,YF,Herb Filled Animals
+590,OTHER,99,All Other Applications,78,Herbal Therapy,YG,Eye Pillows
+590,OTHER,99,All Other Applications,78,Herbal Therapy,YH,Shoulder Wraps
+590,OTHER,99,All Other Applications,78,Herbal Therapy,YJ,Body Wraps
+590,OTHER,99,All Other Applications,78,Herbal Therapy,YL,All Other Herbal Therapy
+590,OTHER,99,All Other Applications,79,Candles,YM,Jars
+590,OTHER,99,All Other Applications,79,Candles,YN,Votive
+590,OTHER,99,All Other Applications,79,Candles,YP,Pillar
+590,OTHER,99,All Other Applications,79,Candles,YR,Candle Accessories
+590,OTHER,99,All Other Applications,79,Candles,YT,All Other Candles
+590,OTHER,99,All Other Applications,80,Edibles,YU,Breath / Mints
+590,OTHER,99,All Other Applications,80,Edibles,YV,Gumballs
+590,OTHER,99,All Other Applications,80,Edibles,YW,Chocolates
+590,OTHER,99,All Other Applications,80,Edibles,YX,Honey
+590,OTHER,99,All Other Applications,80,Edibles,YY,Vitamins / Supplements
+590,OTHER,99,All Other Applications,80,Edibles,YZ,TOOTHPASTE
+590,OTHER,99,All Other Applications,80,Edibles,Z0,All Other Edibles
+590,OTHER,99,All Other Applications,81,Bath Accessories,Z1,Soap Dishes
+590,OTHER,99,All Other Applications,81,Bath Accessories,Z2,Slippers / Robes
+590,OTHER,99,All Other Applications,81,Bath Accessories,Z3,Sponge / Mits
+590,OTHER,99,All Other Applications,81,Bath Accessories,Z4,Bath Textiles
+590,OTHER,99,All Other Applications,81,Bath Accessories,Z7,All Other Bath
+590,OTHER,99,All Other Applications,85,Services,49,All Services
+590,OTHER,99,All Other Applications,90,Accessories,35,Bags / Totes
+590,OTHER,99,All Other Applications,90,Accessories,Z8,Jewelry
+590,OTHER,99,All Other Applications,90,Accessories,Z9,Stuffed Animals
+590,OTHER,99,All Other Applications,90,Accessories,ZA,Massage Tools
+590,OTHER,99,All Other Applications,90,Accessories,ZC,Paper / Stationery
+590,OTHER,99,All Other Applications,90,Accessories,ZD,Media
+590,OTHER,99,All Other Applications,90,Accessories,ZE,Apparel
+590,OTHER,99,All Other Applications,90,Accessories,ZG,All Other Accessories
+590,OTHER,99,All Other Applications,95,Cross Application Sets,64,All Cross Application  Sets
+590,OTHER,99,All Other Applications,97,Displays,A7,All Displays
+590,OTHER,99,All Other Applications,98,Printed Materials,68,All Printed Material
+590,OTHER,99,All Other Applications,99,All Other (Other),99,All All Other (Other)
+590,OTHER,99,All Other Applications,99,All Other (Other),ZL,Salon / Store
