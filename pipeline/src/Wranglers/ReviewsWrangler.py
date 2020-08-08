@@ -13,6 +13,9 @@ class ReviewsWrangler:
     def __init__(self, reviews_paths_file_types, products_paths_file_types):
         self.reviews_paths_file_types = reviews_paths_file_types
         self.products_paths_file_types = products_paths_file_types
+        self.product_wrangler = ProductCatalogueWrangler(self.products_paths_file_types)
+        self.topic_modeller = TopicModeller()
+        self.preprocessor = NLPreprocessor()
         self.reviews = pd.DataFrame()
         self.cols = ['type',
                      'onlinepost_id',
@@ -41,7 +44,7 @@ class ReviewsWrangler:
                 temp['type'] = file_type
                 temp.columns = [colname.lower().replace(' ', '_') for colname in temp.columns]
                 temp = temp[self.cols]
-                print('Concatenating', path)
+                print('Concatenating', file_name)
                 self.reviews = pd.concat([self.reviews, temp], ignore_index=True)
 
     def wrangle(self):
@@ -109,11 +112,9 @@ class ReviewsWrangler:
                                                                                    axis=0)
 
     def add_product_catalogue(self):
-        self.product_wrangler = ProductCatalogueWrangler(self.products_paths_file_types)
         self.reviews = self.reviews.merge(self.product_wrangler.get_product_catalogue())
 
     def get_tokens(self):
-        self.preprocessor = NLPreprocessor()
         self.reviews['tokens'] = list(
             tqdm.tqdm(self.preprocessor.preprocess(self.reviews['description'].values.tolist()),
                       position=0,
@@ -121,7 +122,6 @@ class ReviewsWrangler:
                       total=len(self.reviews)))
 
     def add_topics(self):
-        self.topic_modeller = TopicModeller()
         self.reviews = self.topic_modeller.add_topics(reviews=self.reviews)
 
     def aggregate_by_subcategories(self):
