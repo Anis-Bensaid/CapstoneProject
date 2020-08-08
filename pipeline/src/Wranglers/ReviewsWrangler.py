@@ -7,19 +7,12 @@ import numpy as np
 import ntpath
 import tqdm
 
-prod_paths_file_types = [('../data/Cosmetics_Product_20200116_w_SAP.csv', 'Cosmetics'),
-                         ('../data/products_cosmetics_w_SAP.csv', 'Cosmetics')]
-rev_paths_file_types = [('../data/cosmetics_reviews_20200101-20200131_processed.csv', 'Cosmetics')]
-
-# os.chdir('src')
-preprocessor = NLPreprocessor()
-topic_modeller = TopicModeller()
-product_wrangler = ProductCatalogueWrangler(prod_paths_file_types)
 
 
 class ReviewsWrangler:
-    def __init__(self, paths_file_types):
-        self.paths_file_types = paths_file_types
+    def __init__(self, reviews_paths_file_types, products_paths_file_types):
+        self.reviews_paths_file_types = reviews_paths_file_types
+        self.products_paths_file_types = products_paths_file_types
         self.reviews = pd.DataFrame()
         self.cols = ['type',
                      'onlinepost_id',
@@ -39,7 +32,7 @@ class ReviewsWrangler:
         self.aggregate_by_subcategories()
 
     def read_and_concatenate(self):
-        for path_file_type in self.paths_file_types:
+        for path_file_type in self.reviews_paths_file_types:
             path, file_type = path_file_type
             file_name = ntpath.basename(path)
             if '.csv' in path.lower():
@@ -115,15 +108,18 @@ class ReviewsWrangler:
                                                                                    axis=0)
 
     def add_product_catalogue(self):
-        self.reviews = self.reviews.merge(product_wrangler.get_product_catalogue())
+        self.product_wrangler = ProductCatalogueWrangler(self.products_paths_file_types)
+        self.reviews = self.reviews.merge(self.product_wrangler.get_product_catalogue())
 
     def get_tokens(self):
-        self.reviews['tokens'] = list(tqdm.tqdm(preprocessor.preprocess(self.reviews['description'].values.tolist()),
+        self.preprocessor = NLPreprocessor()
+        self.reviews['tokens'] = list(tqdm.tqdm(self.preprocessor.preprocess(self.reviews['description'].values.tolist()),
                                                 position=0,
                                                 leave=True,
                                                 total=len(self.reviews)))
 
     def add_topics(self):
+        self.topic_modeller = TopicModeller()
         self.reviews = topic_modeller.add_topics(reviews=self.reviews)
 
     def aggregate_by_subcategories(self):
@@ -155,4 +151,8 @@ class ReviewsWrangler:
                                                            'sentiment_negative': 'sum',
                                                            'sentiment_neutral': 'sum',
                                                            'sentiment_positive': 'sum',
+                                                           'topic_1': 'sum',
+                                                           'topic_2': 'sum',
+                                                           'topic_3': 'sum',
+                                                           'topic_4': 'sum',
                                                            }).reset_index()

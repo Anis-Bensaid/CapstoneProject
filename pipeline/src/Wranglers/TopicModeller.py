@@ -4,7 +4,6 @@ import gensim
 
 PATH_TO_MODELS = '../models'
 
-
 class TopicModeller:
     def __init__(self, path_to_models=PATH_TO_MODELS):
         self.path_to_models = path_to_models
