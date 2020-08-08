@@ -1,8 +1,10 @@
-import pandas as pd
 import os
+
 import gensim
+import pandas as pd
 
 PATH_TO_MODELS = '../models'
+
 
 class TopicModeller:
     def __init__(self, path_to_models=PATH_TO_MODELS):

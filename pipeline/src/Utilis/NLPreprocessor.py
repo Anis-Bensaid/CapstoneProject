@@ -1,11 +1,10 @@
-import spacy
-import pandas as pd
-from nltk.corpus import stopwords
-import nltk
 from collections import Counter
-from gensim.utils import simple_preprocess
-import en_core_web_sm
 
+import nltk
+import pandas as pd
+import spacy
+from gensim.utils import simple_preprocess
+from nltk.corpus import stopwords
 
 nltk.download('stopwords')
 

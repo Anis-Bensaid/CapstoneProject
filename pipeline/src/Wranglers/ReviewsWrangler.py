@@ -1,12 +1,12 @@
-from src.Utilis.NLPreprocessor import *
-from src.Wranglers.TopicModeller import *
-from src.Wranglers.ProductCatalogueWrangler import *
-
-import pandas as pd
-import numpy as np
 import ntpath
+
+import numpy as np
+import pandas as pd
 import tqdm
 
+from src.Utilis.NLPreprocessor import *
+from src.Wranglers.ProductCatalogueWrangler import *
+from src.Wranglers.TopicModeller import *
 
 
 class ReviewsWrangler:
@@ -102,7 +102,8 @@ class ReviewsWrangler:
                                                                     'sentiment': 'mean'
                                                                     }).reset_index()
 
-        # Normalize the one hot sentiment encoding counts (sentiment_negative, sentiment_neutral, sentiment_positive) by the nb_statement.
+        # Normalize the one hot sentiment encoding counts (sentiment_negative, sentiment_neutral, sentiment_positive)
+        # by the nb_statement.
         self.reviews[['sentiment_negative', 'sentiment_neutral', 'sentiment_positive']] = self.reviews[
             ['sentiment_negative', 'sentiment_neutral', 'sentiment_positive']].div(self.reviews['nb_statements'],
                                                                                    axis=0)
@@ -113,14 +114,15 @@ class ReviewsWrangler:
 
     def get_tokens(self):
         self.preprocessor = NLPreprocessor()
-        self.reviews['tokens'] = list(tqdm.tqdm(self.preprocessor.preprocess(self.reviews['description'].values.tolist()),
-                                                position=0,
-                                                leave=True,
-                                                total=len(self.reviews)))
+        self.reviews['tokens'] = list(
+            tqdm.tqdm(self.preprocessor.preprocess(self.reviews['description'].values.tolist()),
+                      position=0,
+                      leave=True,
+                      total=len(self.reviews)))
 
     def add_topics(self):
         self.topic_modeller = TopicModeller()
-        self.reviews = topic_modeller.add_topics(reviews=self.reviews)
+        self.reviews = self.topic_modeller.add_topics(reviews=self.reviews)
 
     def aggregate_by_subcategories(self):
         # Aggregating RR data by channel + source_product_identifier

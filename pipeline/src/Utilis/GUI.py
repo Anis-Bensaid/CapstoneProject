@@ -46,10 +46,11 @@
 #                    command=write_slogan)
 # slogan.pack(side=tk.LEFT)
 
+import ntpath
 from tkinter import *
 from tkinter import filedialog
 from tkinter import ttk
-import ntpath
+
 
 class GUI:
     def __init__(self, master):
@@ -102,7 +103,7 @@ class GUI:
         self.year = self.year_str.get()
         self.product_paths = []
         for path_pannel in self.label_frame_pc.path_pannels:
-            if path_pannel.path!='':
+            if path_pannel.path != '':
                 self.product_paths.append((path_pannel.path, path_pannel.type_str.get()))
         self.reviews_paths = []
         for path_pannel in self.label_frame_rr.path_pannels:
@@ -128,7 +129,6 @@ class output_panel(LabelFrame):
         self.output_str.set(path)
 
 
-
 class add_files_panel(LabelFrame):
     def __init__(self, master, filetype, cnf={}, **kw):
         super().__init__(master=master, cnf=cnf, **kw)
@@ -141,11 +141,11 @@ class add_files_panel(LabelFrame):
     def add_file(self):
         path = filedialog.askopenfilename(initialdir="/", title="Select file",
                                           filetypes=(("csv files", "*.csv"), ("all files", "*.*")))
-        if path=='':
+        if path == '':
             return
         else:
             path_pannel = added_file(master=self, path=path)
-            path_pannel.grid(row=len(self.path_pannels)+4, column=0)
+            path_pannel.grid(row=len(self.path_pannels) + 4, column=0)
             self.path_pannels.append(path_pannel)
             self.path_pannels
 
@@ -168,4 +168,3 @@ class added_file(Frame):
         self.path = ''
         self.type_str.set('')
         self.grid_forget()
-
