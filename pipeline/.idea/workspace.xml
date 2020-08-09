@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a0e5d19-0fd1-464a-8f32-0ebd6d4a0891" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pipeline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pipeline.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wranglers/ReviewsWrangler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wranglers/ReviewsWrangler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilis/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilis/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilis/NLPreprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilis/NLPreprocessor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +50,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -75,6 +79,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\src\Wranglers\ReviewsWrangler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -96,6 +101,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -117,6 +123,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\asaid\OneDrive - The Estée Lauder Companies Inc\Desktop\CapstoneProject\pipeline\src\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -166,6 +173,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595961935813</updated>
+      <workItem from="1596919528969" duration="6445000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1595962092525</created>
@@ -226,6 +234,9 @@
     <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -284,14 +295,16 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1259" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1596526061833" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1596919330922">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1596920807197">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1596919330922" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1596919052395">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1596920807197" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1596919665035">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1596919052395" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1596919665035" />
     <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596490217046">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -300,9 +313,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="450" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1596918424271" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1596520140355">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="327" y="134" key="git4idea.merge.GitPullDialog" timestamp="1596919680926">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="327" y="134" key="git4idea.merge.GitPullDialog/0.0.1280.689@0.0.1280.689" timestamp="1596919680926" />
+    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup" timestamp="1596925482357">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1596520140355" />
+    <state x="303" y="1" width="672" height="687" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1596925482357" />
   </component>
 </project>
