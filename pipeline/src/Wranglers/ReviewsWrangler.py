@@ -1,7 +1,6 @@
-import ntpath
+from typing import List
 
 import numpy as np
-import pandas as pd
 import tqdm
 
 from src.Utilis.NLPreprocessor import *
@@ -10,13 +9,39 @@ from src.Wranglers.TopicModeller import *
 
 
 class ReviewsWrangler:
-    def __init__(self, reviews_paths_file_types, products_paths_file_types):
+    """
+    Wrangles the Signals data.
+
+    Performs the following steps:
+        1. Reads and concatenates all the selected files.
+        2. Performs feature engineering on the reviews dataset
+        3. Merges the reviews with the product catalogue
+        4. Performs NLP Pre-processing
+        5. Applies Topic Modeling
+        6. Aggregates date
+    """
+
+    def __init__(self, reviews_paths_file_types: List[(str, str)], products_paths_file_types: List[(str, str)]) -> None:
+        """
+        Initializes an instance of Reviews Wrangler.
+
+        :param List[(str, str)] reviews_paths_file_types: list of tuples. Each tuple contains the paths to a review
+        file and the type of the file (Cosmetics, Skincare).
+        :param List[(str, str)] products_paths_file_types: list of tuples. Each tuple contains the paths to a product
+        catalogue file and the type of the file (Cosmetics, Skincare).
+        """
         self.reviews_paths_file_types = reviews_paths_file_types
         self.products_paths_file_types = products_paths_file_types
+
+        # Initializes a ProductCatalogueWrangler which contains the ELC product catalogue for the reviews
         self.product_wrangler = ProductCatalogueWrangler(self.products_paths_file_types)
-        self.topic_modeller = TopicModeller()
+        # Initializes an NLPreprocessor which will be used to get the pre-preprocess the reviews before LDA
         self.preprocessor = NLPreprocessor()
+        # Initializes a TopicModeller which contains the pre-trained Gensim LDA models
+        self.topic_modeller = TopicModeller()
+
         self.reviews = pd.DataFrame()
+        # Important columns
         self.cols = ['type',
                      'onlinepost_id',
                      'source_product_identifier',
@@ -27,6 +52,8 @@ class ReviewsWrangler:
                      'channel',
                      'rating',
                      'sentiment']
+
+        # Performs all the steps at initialization
         self.read_and_concatenate()
         self.wrangle()
         self.add_product_catalogue()
@@ -34,7 +61,10 @@ class ReviewsWrangler:
         self.add_topics()
         self.aggregate_by_subcategories()
 
-    def read_and_concatenate(self):
+    def read_and_concatenate(self) -> None:
+        """
+        Reads and concatenates all the selected files.
+        """
         for path_file_type in self.reviews_paths_file_types:
             path, file_type = path_file_type
             file_name = ntpath.basename(path)
@@ -42,12 +72,17 @@ class ReviewsWrangler:
                 print(f'\nReading {file_name}...')
                 temp = pd.read_csv(path, low_memory=False)
                 temp['type'] = file_type
+                # Code friendly column names
                 temp.columns = [colname.lower().replace(' ', '_') for colname in temp.columns]
                 temp = temp[self.cols]
                 print('Concatenating', file_name)
                 self.reviews = pd.concat([self.reviews, temp], ignore_index=True)
 
-    def wrangle(self):
+    def wrangle(self) -> None:
+        """
+        Wrangles the ratings and reviews data.
+        """
+        # Filter on USA
         self.reviews = self.reviews[self.reviews['geography'] == 'USA']
 
         # Creating date columns in the right dtype and dropping the day of the date: 2019-02-24 => 2019-02-01
@@ -82,11 +117,10 @@ class ReviewsWrangler:
         # Transforming sentiment to integer data (positive:1; netural:0, negative:-1)
         self.reviews.loc[:, 'sentiment'] = self.reviews['sentiment_positive'] - self.reviews['sentiment_negative']
 
-        # Aggregating RR data by OnlinePost_ID
-
         # Creating a column to count the number of statements by review once aggreagtion happens
         self.reviews['nb_statements'] = self.reviews['sentiment']
 
+        # Aggregating RR data by OnlinePost_ID
         self.reviews = self.reviews.groupby(['type',
                                              'channel',
                                              'source_product_identifier',
@@ -111,22 +145,35 @@ class ReviewsWrangler:
             ['sentiment_negative', 'sentiment_neutral', 'sentiment_positive']].div(self.reviews['nb_statements'],
                                                                                    axis=0)
 
-    def add_product_catalogue(self):
+    def add_product_catalogue(self) -> None:
+        """
+        Merges the Ratings and Reviews file with the Product Catalogue.
+        """
         self.reviews = self.reviews.merge(self.product_wrangler.get_product_catalogue())
 
-    def get_tokens(self):
+    def get_tokens(self) -> None:
+        """
+        Performs NLP pre-processing.
+        """
+        print('\nPre-processing the reviews...')
         self.reviews['tokens'] = list(
             tqdm.tqdm(self.preprocessor.preprocess(self.reviews['description'].values.tolist()),
                       position=0,
                       leave=True,
                       total=len(self.reviews)))
 
-    def add_topics(self):
+    def add_topics(self) -> None:
+        """
+        Adds topics to each of the reviews.
+        """
+        print('\nAdding topics to the reviews...')
         self.reviews = self.topic_modeller.add_topics(reviews=self.reviews)
 
-    def aggregate_by_subcategories(self):
-        # Aggregating RR data by channel + source_product_identifier
-
+    def aggregate_by_subcategories(self) -> None:
+        """
+        Aggregates Ratings and Reviews by subcategories.
+        """
+        print("\nAggregating by sub-categories...")
         # Creating a column to count the number of self.reviews once aggreagtion happens
         self.reviews['nb_reviews'] = self.reviews['rating']
         self.reviews['avg_nb_statements'] = self.reviews['nb_statements']

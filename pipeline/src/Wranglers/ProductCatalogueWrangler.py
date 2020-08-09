@@ -1,10 +1,20 @@
-import ntpath
-
 import pandas as pd
+
+import ntpath
+from typing import List
 
 
 class ProductCatalogueWrangler:
-    def __init__(self, paths_file_types):
+    """
+    Wrangles the Product Catalogue files.
+    """
+    def __init__(self, paths_file_types: List[(str,str)]) -> None:
+        """
+        Initializes a new instance of ProductCatalogueWrangler.
+
+        :param List[(str, str)] paths_file_types: list of tuples. Each tuple contains the paths to a product catalogue
+        file and the type of the file (Cosmetics, Skincare).
+        """
         self.paths_file_types = paths_file_types
         self.products = pd.DataFrame()
         self.cols = ['type',
@@ -26,7 +36,10 @@ class ProductCatalogueWrangler:
         self.read_and_concatenate()
         self.wrangle()
 
-    def read_and_concatenate(self):
+    def read_and_concatenate(self) -> None:
+        """
+        Reads and concatenates all the selected files.
+        """
         for path_file_type in self.paths_file_types:
             path, file_type = path_file_type
             file_name = ntpath.basename(path)
@@ -40,7 +53,15 @@ class ProductCatalogueWrangler:
                 self.products = pd.concat([self.products, temp], ignore_index=True)
 
     def wrangle(self):
+        """
+        Drops missing data.
+        """
         self.products.dropna(inplace=True)
 
     def get_product_catalogue(self):
+        """
+        Returns the products catalogue.
+
+        :return: pd.DataFrame: products catalogue.
+        """
         return self.products

@@ -1,6 +1,7 @@
 import pandas as pd
 
 from collections import Counter
+from typing import List
 
 import nltk
 import spacy
@@ -56,11 +57,19 @@ class NLPreprocessor:
             ' '.join([' '.join(simple_preprocess(str(word), deacc=True)) for word in self.stop_words]))
         self.stop_words = [token.lemma_ for token in stop_words_nlp]
 
-        # Cache self.stop_words into hash
+        # Cache self.stop_words into hash to speed things up
         self.stop_words = Counter(self.stop_words)
         return self.stop_words
 
-    def preprocess(self, sentences, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
+    def preprocess(self, sentences: List[str], allowed_postags: List[str] = ['NOUN', 'ADJ', 'VERB', 'ADV']) -> None:
+        """
+        Pre-process the sentences in the list sentences. This is a generator (uses yield instead of return). We
+        use a generator for memory efficiency.
+
+        :param List[str] sentences: list of reviews.
+        :param List[str} allowed_postags: list of the word tags to be allowed in the final corpus.
+        :return generator a list of tokens.
+        """
         nlp = spacy.load("en_core_web_sm", disable=['parser', 'ner'])
         for sentence in sentences:
             doc = nlp(' '.join([token for token in simple_preprocess(str(sentence), deacc=True)]))
