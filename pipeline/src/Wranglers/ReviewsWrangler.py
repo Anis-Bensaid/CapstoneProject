@@ -2,6 +2,7 @@ from typing import List
 
 import numpy as np
 import tqdm
+import datetime
 
 from src.Utilis.NLPreprocessor import *
 from src.Wranglers.ProductCatalogueWrangler import *
@@ -21,6 +22,7 @@ class ReviewsWrangler:
         6. Aggregates date
     """
 
+
     def __init__(self, reviews_paths_file_types: List, products_paths_file_types: List) -> None:
         """
         Initializes an instance of Reviews Wrangler.
@@ -29,6 +31,7 @@ class ReviewsWrangler:
         file and the type of the file (Cosmetics, Skincare).
         :param List[(str, str)] products_paths_file_types: list of tuples. Each tuple contains the paths to a product
         catalogue file and the type of the file (Cosmetics, Skincare).
+
         """
         self.reviews_paths_file_types = reviews_paths_file_types
         self.products_paths_file_types = products_paths_file_types
@@ -52,6 +55,14 @@ class ReviewsWrangler:
                      'channel',
                      'rating',
                      'sentiment']
+        # Dates
+        self.current_year = int(current_year)
+        self.current_month = int(current_month)
+        self.current_date = datetime.datetime(year=self.current_year, month=self.current_month, day=1)
+        self.previous_date = self.current_date - datetime.timedelta(days=1)
+        self.previous_year = self.previous_date.year
+        self.previous_month = self.previous_date.month
+        self.dates = []
 
         # Performs all the steps at initialization
         self.read_and_concatenate()
@@ -93,6 +104,17 @@ class ReviewsWrangler:
             self.reviews = self.reviews.dropna(subset='date')
         self.reviews['date'] = self.reviews['date'].dt.to_period('m')
 
+        self.dates = [str(date) for date in list(self.reviews['date'].unique())]
+
+        if not self.dates.__contains__(str(self.current_year)+'-'+str(self.current_month).rjust(2, '0')):
+            print(self.dates)
+            print(f'\nERROR: Please upload files with data from the current month: '
+                  f'{self.current_year}-{self.current_month}')
+
+        if not self.dates.__contains__(str(self.previous_year)+'-'+str(self.previous_month).rjust(2, '0')):
+            print(f'\nERROR: Please upload files with data from the previous month: '
+                  f'{self.previous_year}-{self.previous_month}')
+
         # Checking for missing data (NA => -1)
         if self.reviews['rating'].isna().sum() > 0:
             print('{} rows are missing ratings'.format(self.reviews['rating'].isna().sum()))
@@ -110,7 +132,7 @@ class ReviewsWrangler:
                                                  columns=['rating', 'sentiment'],
                                                  dtype=int)], axis=1)
 
-        # Readding NAs data to ratings
+        # Re-adding NAs data to ratings
         self.reviews.loc[self.reviews['rating'] == -1, 'rating'] = np.nan
         self.reviews.loc[self.reviews['sentiment'] == -1, 'sentiment'] = np.nan
 
@@ -188,6 +210,7 @@ class ReviewsWrangler:
                                              'application',
                                              'category',
                                              'sub_category',
+                                             'aggregated_category',
                                              'date']).agg({'avg_nb_statements': 'mean',
                                                            'nb_reviews': 'count',
                                                            'rating': 'mean',
