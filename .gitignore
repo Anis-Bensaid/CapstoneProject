@@ -145,3 +145,5 @@ topic_modelling/last_run/cv_best_symmetric_0.1_9
 topic_modelling/old/full_asymmetric_symmetric_8
 topic_modelling/old/lda_8
 *.xml
+pipeline/.idea/misc.xml
+pipeline/.idea/pipeline.iml
