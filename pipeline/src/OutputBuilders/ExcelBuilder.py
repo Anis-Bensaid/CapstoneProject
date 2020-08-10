@@ -21,9 +21,31 @@ class ExcelBuilder:
 
     def get_grouped_df(self):
         self.grouped = self.df.groupby(
-            ["elc_brand", "major_category", "application", "category", "sub_category", "date"]).sum().reset_index()
+            ["elc_brand", "major_category", "aggregated_category", "application", "category", "sub_category", "date"]).sum().reset_index()
         self.grouped[
             "n_ratings"] = self.grouped.sentiment_positive + self.grouped.sentiment_neutral + self.grouped.sentiment_negative
+        details = self.grouped[["elc_brand",
+                                "major_category",
+                                "aggregated_category",
+                                "application",
+                                "category",
+                                "sub_category",
+                                "date"]]
+        rating_counts = self.grouped[["n_ratings",
+                                      "sentiment_positive",
+                                      "sentiment_negative",
+                                      "sentiment_neutral"]]
+        topics = self.grouped[["topic_1",
+                               "topic_2",
+                               "topic_3",
+                               "topic_4"]]
+        self.grouped["zeros"] = 0
+        
+        self.grouped = pd.concat([details,
+                                  self.grouped.zeros,
+                                  rating_counts,
+                                  self.grouped.zeros,
+                                  topics], axis = 1)
         return True
 
     def get_expected_effect(self):
@@ -33,8 +55,19 @@ class ExcelBuilder:
         mean_pos = np.mean(mean_pos * self.grouped.n_ratings / sum(self.grouped.n_ratings))
         mean_neu = np.mean(mean_neu * self.grouped.n_ratings / sum(self.grouped.n_ratings))
 
-        est_min = mean_pos - self.positive_sd + mean_pos - self.neutral_sd
-        est_max = mean_pos + self.positive_sd + mean_pos + self.neutral_sd
+        est_min = np.round(mean_pos - self.positive_sd + mean_pos - self.neutral_sd, 3)
+        est_max = np.round(mean_pos + self.positive_sd + mean_pos + self.neutral_sd, 3)
+        
+        if est_min > 0:
+            est_min = "+" + str(est_min)
+        else:
+            est_min = str(est_min)
+        
+        if est_max > 0:
+            est_max = "+" + str(est_max)
+        else:
+            est_max = str(est_max)
+            
         return (est_min, est_max)
 
     def export_details(self, wb):
@@ -52,7 +85,7 @@ class ExcelBuilder:
 
     def export_summary(self, wb):
         estimate = self.get_expected_effect()
-        estimate = str(estimate[0]) + "-" + str(estimate[1]) + "%"
+        estimate = estimate[0] + " to " + estimate[1] + "%"
         pd.DataFrame([estimate]).to_excel(wb, sheet_name='Summary', header=None, index=False,
                                           startcol=2, startrow=3)
 
@@ -66,7 +99,8 @@ class ExcelBuilder:
 
         month_change["Percent Change"] = (month_change[current_month] - month_change[previous_month]) / month_change[
             previous_month]
-        month_change["Percent Change"] = str(np.round(month_change["Percent Change"] * 100, 2)) + "%"
+        month_change = np.round(month_change, 2)
+        month_change["Percent Change"] = [str(x*100) + "%" for x in month_change["Percent Change"]]
 
         month_change.to_excel(wb, sheet_name='Summary', header=None, index=False,
                               startcol=2, startrow=6)

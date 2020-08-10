@@ -23,7 +23,7 @@ class ReviewsWrangler:
     """
 
 
-    def __init__(self, reviews_paths_file_types: List, products_paths_file_types: List) -> None:
+    def __init__(self, reviews_paths_file_types, products_paths_file_types, current_year, current_month) -> None:
         """
         Initializes an instance of Reviews Wrangler.
 

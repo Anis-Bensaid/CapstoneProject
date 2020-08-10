@@ -9,6 +9,7 @@ class ProductCatalogueWrangler:
     Wrangles the Product Catalogue files.
     """
     def __init__(self, paths_file_types: List) -> None:
+
         """
         Initializes a new instance of ProductCatalogueWrangler.
 

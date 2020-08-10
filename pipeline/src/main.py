@@ -1,5 +1,6 @@
 from src.Wranglers.ReviewsWrangler import *
 from src.Utilis.GUI import *
+from src.OutputBuilders.ExcelBuilder import ExcelBuilder
 
 if __name__ == '__main__':
     # Creates the GUI
@@ -17,7 +18,12 @@ if __name__ == '__main__':
     # Get the wrangled data
     reviews = reviews_wrangler.reviews
     print(reviews)
-    reviews.to_csv('results.csv', index=False)
+    
+    eb = ExcelBuilder(eb)
+    eb.export()
+    
+   
+    
 
 
 
