@@ -30,6 +30,7 @@ class GUI:
         # Label
         ttk.Label(master=self.date_frame, text=str('Select current date month/year:'), width=64).grid(row=0, column=0,
                                                                                                       padx=10)
+
         # Combobox for the month
         self.month_str = StringVar(master=self.date_frame, value=self.month)
         self.month_cbb = ttk.Combobox(master=self.date_frame,
@@ -44,6 +45,11 @@ class GUI:
                                      textvariable=self.year_str,
                                      state='readonly',
                                      width=10)
+
+        # Instruction Label
+        ttk.Label(master=self.date_frame, text='Make sure to provide files for the current and previous '
+                                               'months.').grid(row=1, columns=1, padx=10, pady=10)
+
         # Adding the widgets for the date
         self.month_cbb.grid(row=0, column=1, padx=10, pady=10)
         self.year_cbb.grid(row=0, column=2, padx=10, pady=10)

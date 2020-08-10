@@ -47,6 +47,7 @@ class TopicModeller:
         :return: pd.DataFrame: the reviews DataFrame with the topic columns.
         """
         # initializes the columns with zeroes
+        reviews['aggregated_category'] = ' '
         for col in ['topic_1', 'topic_2', 'topic_3', 'topic_4']:
             reviews[col] = 0
 
@@ -74,6 +75,8 @@ class TopicModeller:
                      ])).T.toarray(),
                                   columns=self.topics_grid[category]['columns'])
             # Add the topics to the reviews DataFrame.
+            reviews.loc[
+                self.topics_grid[category]['tokens'].index, 'aggregated_category'] = category
             reviews.loc[
                 self.topics_grid[category]['tokens'].index, ['topic_1', 'topic_2', 'topic_3', 'topic_4']] = topics
         return reviews
