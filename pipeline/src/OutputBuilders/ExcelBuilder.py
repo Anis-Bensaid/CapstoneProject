@@ -9,7 +9,8 @@ class ExcelBuilder:
 
     def __init__(self, df):
         self.df = df
-        self.df["date"] = pd.to_datetime(self.df.date)
+        self.df["date"] = pd.to_datetime([str(x) + "-01" for x in self.df.date])
+        self.df["date"] = [x.date() for x in self.df.date]
 
         self.neutral_coef = -0.0346
         self.positive_coef = 0.0581
@@ -55,14 +56,12 @@ class ExcelBuilder:
         pd.DataFrame([estimate]).to_excel(wb, sheet_name='Summary', header=None, index=False,
                                           startcol=2, startrow=3)
 
-        current_month = pd.Timestamp(self.current_month).to_pydatetime().date().strftime('%Y-%m-%d')
-        previous_month = pd.Timestamp(self.previous_month).to_pydatetime().date().strftime('%Y-%m-%d')
-        month_change = self.df.loc[self.df.dateisin([self.current_month, self.previous_month])]
+        current_month = self.current_month
+        previous_month = self.previous_month
         month_change = self.df.groupby("date").sum()[["sentiment_positive",
                                                       "sentiment_neutral",
                                                       "sentiment_negative"]]
-        month_change[
-            "total"] = month_change.sentiment_positive + month_change.sentiment_neutral + month_change.sentiment_negative
+        month_change["total"] = month_change.sentiment_positive + month_change.sentiment_neutral + month_change.sentiment_negative
         month_change = month_change.transpose()
 
         month_change["Percent Change"] = (month_change[current_month] - month_change[previous_month]) / month_change[

@@ -21,7 +21,7 @@ class ReviewsWrangler:
         6. Aggregates date
     """
 
-    def __init__(self, reviews_paths_file_types: List[(str, str)], products_paths_file_types: List[(str, str)]) -> None:
+    def __init__(self, reviews_paths_file_types: List, products_paths_file_types: List) -> None:
         """
         Initializes an instance of Reviews Wrangler.
 
